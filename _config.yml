@@ -1,0 +1,48 @@
+# Personal site for David Xie.
+# GitHub Pages publishes this user site from the main branch with its built-in
+# Jekyll build. Plugins below are on the GitHub Pages whitelist.
+
+title: David Xie
+description: Math student at Georgia Tech and a golfer, starting a golf YouTube channel.
+url: https://eruven.github.io
+baseurl: ""
+lang: en_US
+timezone: America/New_York
+author:
+  name: David Xie
+social:
+  name: David Xie
+  links:
+    - https://github.com/Eruven
+
+# Primer is the github-pages gem default. This site uses its own layouts.
+theme: null
+
+permalink: /:year/:month/:day/:title/
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  math_engine: mathjax
+  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+sass:
+  style: compressed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - .bundle

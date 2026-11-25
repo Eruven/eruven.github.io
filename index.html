@@ -1,0 +1,25 @@
+---
+layout: default
+---
+<p class="lede">{{ site.description }}</p>
+
+<section class="listing" aria-labelledby="posts-heading">
+  <h2 id="posts-heading">Posts</h2>
+  {% if site.posts.size > 0 %}
+  <ul class="post-list">
+    {% for post in site.posts %}
+    <li>
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+      <div>
+        <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        {% if post.description %}
+        <p>{{ post.description | escape }}</p>
+        {% endif %}
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="empty">No posts yet.</p>
+  {% endif %}
+</section>
